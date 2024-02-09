@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block data %}
+        
+<table class="table">
+  {% if attendence|length==0 %}
+      <div class="alert alert-dark alert-dismissible fade show" role="alert">
+        No Records Please Add Attendence
+      </div>
+      {% else %}
+          <thead>
+            <tr>
+              <th scope="col">SNo</th>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            
+        {% for i in attendence %}
+          <tr>
+            <td>{{loop.index}}</td>
+            <td>{{i.sno}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.date}}</td>
+            <td><a href="/delete/{{i.sno}}" type="button" class="btn btn-outline-dark">Delete</a></td>
+          </tr>
+        {% endfor %}
+        
+      {% endif %}
+    </tbody>
+  </table>
+
+{% endblock data %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block form %}
+<div class="container">
+  <form action="/" method="POST">
+    <div class="d-flex">
+      <h1 class="ml-auto mr-auto">
+        Ravisabha Attendence
+      </h1>
+    </div>
+    <a href="/name" class="text-warning font-weight-bold">Search By Name</a>
+
+    {% if val==0 %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      Data Not Found
+    </div>
+    {% endif %}
+
+    <div class="form-group">
+      <label for="id1">Enter ID :</label>
+      <input type="number" class="form-control" name="userid" id="id1" placeholder="Enter ID">
+    </div>
+
+    <button type="submit" class="btn btn-dark rounded-pill">Search</button>
+  </form>
+  {% block indexdata %}
+
+  {% endblock indexdata %}
+
+</div>
+{% endblock form %}

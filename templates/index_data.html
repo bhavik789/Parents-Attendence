@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block indexdata %}
+<form action="/submit" method="POST" class="d-flex mt-5 mb-3">
+    <div class="card text-white w-25 p-3 bg-dark ml-auto mr-auto">
+        <div>
+            <p class="d-flex">
+                <label class=" ml-auto mt-0 mr-auto">Name : <strong>{{n_ame}}</strong></label>
+            </p>
+            <p class="d-flex">
+                <label class="ml-auto mb-0 mr-auto">ID : <strong>{{s_no}}</strong></label> 
+            </p>
+        </div>
+        <input type="text" name="iddata" value="{{s_no}}" class="mr-auto d-none text-black rounded-lg w-50">
+        <input  type="text" name="namedata" value="{{n_ame}}" class="mr-auto d-none text-black rounded-lg w-50">
+        <button class="btn btn-outline-light ml-auto mr-auto" type="submit">Submit</button>
+    </div>
+</form>
+{% endblock indexdata %}

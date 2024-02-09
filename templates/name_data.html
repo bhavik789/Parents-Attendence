@@ -1,0 +1,24 @@
+{% extends 'name.html' %}
+{% block namedata %}
+<div class="d-flex flex-wrap mt-5 mb-3">
+    {% for i in s_no %}
+    <form action="/submitname/{{s_no[loop.index-1]}}/{{n_ame[loop.index-1]}}" method="POST"  class="card text-white w-25 p-3 m-3 bg-dark ml-auto mr-auto">
+        <div class="text-center">
+            <div>
+                <p class="d-flex">
+                    <label class=" ml-auto mt-0 mr-auto">Name : <strong>{{n_ame[loop.index-1]}}</strong></label>
+                </p>
+                <p class="d-flex">
+                    <label class="ml-auto mb-0 mr-auto">ID : <strong>{{s_no[loop.index-1]}}</strong></label>
+                </p>
+            </div>
+            <input type="text" name="iddata1" value="{{s_no[loop.index-1]}}"
+                class="mr-auto d-none text-black rounded-lg w-50">
+            <input type="text" name="namedata1" value="{{n_ame[loop.index-1]}}"
+                class="mr-auto d-none text-black rounded-lg w-50">
+            <button class="btn btn-outline-light ml-auto mr-auto" type="submit">Submit</button>
+        </div>
+    </form>
+    {% endfor %}
+</div>
+{% endblock namedata %}
